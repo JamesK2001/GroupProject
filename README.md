@@ -19,34 +19,49 @@ export the array of data to be used by other functions
 These initial conditions take the form State0 Where State is replaced with
 the corresponding shorthand State ID as shown below
 ----States----
+
 #Susceptible#
+
 S
+
 #Exposed#
+
 E
 
 #Asymptomatic (Infected)#
+
 Asymp
 
 #Symptomatic (Infected)#
+
 Symp
 
 #Self Isolated#
+
 Iso
 
 #Hospitalised #
+
 Hos
 
 #Dead from Virus #
+
 D
 
 #Recovered Alive #
+
 R
 
 ------- Constants/Coefficients ---------
-Format: Description of Constants
+
+Format:
+	Description of Constants
     (Dictionary Key) = variable name for use in functions
+    
 -------------------------------------------------------------
+
 Variables involved in Susceptible to exposed
+
 ( Contacts = contacts sufficient to spread virus):
 
 	• Asymptomatic Number of Contacts per day
@@ -59,6 +74,8 @@ Variables involved in Susceptible to exposed
         ("HosC") = f
 -------------------------------------------------------------
 Exposed to Asymptomatic / Symptomatic :
+
+
 	• Fraction of Exposed Population that become
         asymptomatic infected per day
 
@@ -75,6 +92,7 @@ Exposed to Asymptomatic / Symptomatic :
         =  k
 -------------------------------------------------------------
 Symptomatic to Isolation :
+
 	• Fraction of Symptomatic Population that become isolated
 	 per day
 
@@ -88,11 +106,13 @@ Isolation to Hospital :
 	("IsoHos") = m
 -------------------------------------------------------------
 Hospital to Dead:
+
 	• Fraction of Hospitalized population that die per day
 
 	("HosD") = p
 -------------------------------------------------------------
 Recovery Constants 
+
 	• Fraction of Asymptomatic Population that recover each day
 
 	("AsympR") = q
