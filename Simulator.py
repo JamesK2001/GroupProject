@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 """
 Created on Fri May  7 14:05:38 2021
 
@@ -18,7 +18,7 @@ class Simulation:
     
     ''' Class containing the functions to define the derivative equations for the number of people in each state.
     and the function integrate the derivative equations across the time period of the simulation defined as duration.
-    Taking inputs of all initial conditions and the constants associated with the simulation. See docstrings for
+    Taking inputs of all initial conditions and the constants associated with the simulation. See the README.md for
     more info on what each cosntant etc is related to. Outputs a collection of arrays as well as the individual arrays
     for each state. These arrays can be used for the plotting functions by calling the relevant array.
         '''
