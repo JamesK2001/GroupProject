@@ -18,6 +18,8 @@ should:
 export the array of data to be used by other functions
 These initial conditions take the form State0 Where State is replaced with
 the corresponding shorthand State ID as shown below
+
+
 ----States----
 
 #Susceptible#
