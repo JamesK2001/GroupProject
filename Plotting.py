@@ -7,20 +7,25 @@ Created on Mon May 10 15:51:02 2021
 
 import numpy as np
 import matplotlib.pyplot as plt
-import Simulator
+import Simulator 
 import easygui
 Simu = Simulator.Simulation(948, 10, 10, 10, 15, 5, 1, 1, 1000, 5, 7, 2, 1, 0.2, 0.3, 0.3, 0.1, 0.1, 0.08, 0.1, 0.05, 100)
 
+#Setting up the graph
 plt.xlabel("Time/days")
 plt.ylabel("Number (1000s)")
 plt.grid()
 
+#Setting up the GUI
 question = "Please select desired plots for graph."
 title = "Options for Plotting"
 listofoptions = ["Suseptible", "Exposed", "Asymptomatic", "Symptomatic", "Self-Isolating", "Hospitalised", "Dead", "Recovered"]
 
+#Launching the GUI with all the options
 choice = easygui.multchoicebox(question, title, listofoptions)
 
+
+#Plotting given options
 for i in choice:
     if i == "Suseptible":
         plt.plot(Simu.S, label="Suseptible")
@@ -39,5 +44,6 @@ for i in choice:
     if i == "Recovered":
         plt.plot(Simu.R, label="Recovered")
 
+#Adding a key to the graph        
 plt.legend()
 
