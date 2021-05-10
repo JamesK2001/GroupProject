@@ -10,9 +10,45 @@ from scipy.integrate import odeint
 
 
 
+class BasicSimulation:
+    def __init__(self, S0, I0, R0, N, beta, gamma, duration):
+        self.S0 = S0
+        self.I0 = I0
+        self.R0 = R0
+        self.N = N
+        self.beta = beta
+        self.gamme = gamma
+        self.duration = duration
+        self.t = np.linspace(0, int(self.duration), int(self.duration))
+        self.arrays = []
+        self.S = []
+        self.I = []
+        self.R = []
+    def basicderiv(self, y, t):
+        
+        S, I, R = y
+        dSdt = -self.beta * S * I / self.N
+        dIdt = self.beta * S * I / self.N - self.gamma * I
+        dRdt = self.gamma * I
+        return dSdt, dIdt, dRdt
+    
+    def basicintegrate(self):
+        y0 = self.S0, self.I0, self.R0
+        
+        ret = odeint(self.basicderiv, y0, self.t)
+       
+        
+        S, I, R = ret.T
+        self.arrays = ret.T
+        self.S = self.arrays[0]
+        self.I = self.arrays[1]
+        self.R = self.arrays[2]
+        
+        
 
 
-class Simulation:
+
+class AdvancedSimulation:
     
     
     
