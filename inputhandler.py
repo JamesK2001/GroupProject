@@ -14,18 +14,31 @@ Created on Mon May 10 17:51:55 2021
 
 class InputHandler:
     
-    def __init__(self, version):
-        self.version = version
+    def __init__(self, versioninput):
+        self.versioninput = versioninput
+        self.version = None
         self.helpmessage = "Enter either Basic or Advanced depending on simulation\
             version you would like to use"
         self.basicinputarray = []
         self.advancedinputarray = []
-        
+        self.handleversion()
         self.run()
         
+    def handleversion(self):
+        while True:
+            try:
+                self.version = self.versioninput
+                if (self.version == "Basic" or "Advanced"):
+                    break
+                else:
+                    print("Invalid Command Line Argument for Version")
+            except Exception as e:
+                print("Invalid input:", e)
+                
     def run(self):
         if self.version == "Basic":
             self.handlebasicinput()
+                
         elif self.version == "Advanced":
             self.handleadvancedinput()
         else:
