@@ -11,7 +11,8 @@ initial state values and transition constants
 """
 
 import argparse
-import Simulator
+import FinalSimulator as Simulator
+import inputhandler 
 
 def main(*args):
     """
@@ -29,3 +30,26 @@ def main(*args):
                         save the graph to a directory. or "B" to do both!')
 
     args = parser.parse_args(args)
+    
+    userinput = inputhandler(args.version)
+    
+    userinput()
+    
+    if userinput.version == "Basic":
+        
+        basicsim = Simulator.BasicSimulation(userinput.basicinputarray)
+        basicsim()
+    
+    elif userinput.version == "Advanced":
+        advancedsim = Simulator.AdvancedSimulation(userinput.advancedarray)
+        advancedsim()
+        
+    
+
+if __name__ == "__main__":
+    #
+    # CLI entry point. The main() function can also be imported and called
+    # with string arguments.
+    #
+    import sys
+    main(*sys.argv[1:])
