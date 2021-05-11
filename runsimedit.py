@@ -25,24 +25,29 @@ def main(*args):
                         help='Choice of "Basic" SIR simulator or "Advanced" \
                                 Simulator with more states')
 
-    parser.add_argument('--output', metavar='O', type=str, default='S',
-                        help=' Input "S" for onscreen graph or "F" to \
-                        save the graph to a directory. or "B" to do both!')
-
+    parser.add_argument('--graphfile', metavar='GF', type=str, default=None,
+                        help=' Filename to save Graph to')
+    parser.add_argument('--constantsfile', metavar='CF', type=str, default=None,
+                        help=' Filename to save Constant Text File to')
     args = parser.parse_args(args)
+    userversion = args.version
+    userinput = inputhandler.InputHandler(userversion)
     
-    userinput = inputhandler(args.version)
     
-    userinput()
+    
+    
+    
+
     
     if userinput.version == "Basic":
         
         basicsim = Simulator.BasicSimulation(userinput.basicinputarray)
-        basicsim()
+            
+            
     
     elif userinput.version == "Advanced":
         advancedsim = Simulator.AdvancedSimulation(userinput.advancedarray)
-        advancedsim()
+        
         
     
 
