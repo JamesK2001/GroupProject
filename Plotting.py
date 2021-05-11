@@ -13,19 +13,20 @@ import Simulator
 import easygui
 Sim=Simulator.BasicSimulation(1, 2, 2, 600, 7, 0.2, 100)
 Simu=Simulator.AdvancedSimulation(948, 10, 10, 10, 15, 5, 1, 1, 1000, 5, 7, 2, 1, 0.2, 0.3, 0.3, 0.1, 0.1, 0.08, 0.1, 0.05, 100)
-question = "Please select desired plots for graph."
+
+question = "Please select desired plots for graph."#Formatting the GUI checklist
 title = "Options for Plotting"
 
     
-def bs():
-    plt.xlabel("Time/days")
+def basicplot():
+    plt.xlabel("Time/days")#Creating the graph
     plt.ylabel("Number (1000s)")
     plt.grid()
     
     Sim=Simulator.BasicSimulation()
-    listofoptions = ["Suseptible", "Infected", "Recovered"]
-    choice = easygui.multchoicebox(question, title, listofoptions)
-    for i in choice:
+    listofoptions = ["Suseptible", "Infected", "Recovered"]#Options for GUI checklist
+    choice = easygui.multchoicebox(question, title, listofoptions)#Launches GUI with options
+    for i in choice:#Plots the chosen options on graph
         if i == "Suseptible":
             plt.plot(Sim.t, Sim.S, label="Suseptible")
         if i == "Infected":
@@ -33,11 +34,11 @@ def bs():
         if i == "Recovered":
             plt.plot(Sim.t, Sim.R, label="Recovered")
             
-    plt.legend()
+    plt.legend()#Adds a key to the graph
                 
                 
-
-def advs():
+#Same as basic function
+def advancedplot():
     plt.xlabel("Time/days")
     plt.ylabel("Number (1000s)")
     plt.grid()
