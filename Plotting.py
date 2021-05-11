@@ -1,49 +1,68 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon May 10 15:51:02 2021
+Created on Tue May  4 19:55:13 2021
 
 @author: kerrj
 """
 
-import numpy as np
+
 import matplotlib.pyplot as plt
-import Simulator 
+import numpy as np
+from scipy.integrate import odeint
+import Simulator
 import easygui
-Simu = Simulator.Simulation()
+Sim=Simulator.BasicSimulation(1, 2, 2, 600, 7, 0.2, 100)
+Simu=Simulator.AdvancedSimulation(948, 10, 10, 10, 15, 5, 1, 1, 1000, 5, 7, 2, 1, 0.2, 0.3, 0.3, 0.1, 0.1, 0.08, 0.1, 0.05, 100)
 
-#Setting up the graph
-plt.xlabel("Time/days")
-plt.ylabel("Number (1000s)")
-plt.grid()
-
-#Setting up the GUI
-question = "Please select desired plots for graph."
+question = "Please select desired plots for graph."#Formatting the GUI checklist
 title = "Options for Plotting"
-listofoptions = ["Suseptible", "Exposed", "Asymptomatic", "Symptomatic", "Self-Isolating", "Hospitalised", "Dead", "Recovered"]
 
-#Launching the GUI with all the options
-choice = easygui.multchoicebox(question, title, listofoptions)
-
-
-#Plotting given options
-for i in choice:
-    if i == "Suseptible":
-        plt.plot(Simu.S, label="Suseptible")
-    if i == "Exposed":
-        plt.plot(Simu.E, label="Exposed")
-    if i == "Asymptomatic":
-        plt.plot(Simu.Asymp, label="Asymptomatic")
-    if i == "Symptomatic":
-        plt.plot(Simu.Symp, label="Symptomatic")
-    if i == "Self-Isolating":
-        plt.plot(Simu.Iso, label="Self-Isolating")
-    if i == "Hospitalised":
-        plt.plot(Simu.Hos, label="Hospitalised")
-    if i == "Dead":
-        plt.plot(Simu.D, label="Dead")
-    if i == "Recovered":
-        plt.plot(Simu.R, label="Recovered")
-
-#Adding a key to the graph        
-plt.legend()
-
+    
+def basicplot():
+    plt.xlabel("Time/days")#Creating the graph
+    plt.ylabel("Number (1000s)")
+    plt.grid()
+    
+    Sim=Simulator.BasicSimulation()
+    listofoptions = ["Suseptible", "Infected", "Recovered"]#Options for GUI checklist
+    choice = easygui.multchoicebox(question, title, listofoptions)#Launches GUI with options
+    for i in choice:#Plots the chosen options on graph
+        if i == "Suseptible":
+            plt.plot(Sim.t, Sim.S, label="Suseptible")
+        if i == "Infected":
+            plt.plot(Sim.t, Sim.I, label="Infected")
+        if i == "Recovered":
+            plt.plot(Sim.t, Sim.R, label="Recovered")
+            
+    plt.legend()#Adds a key to the graph
+                
+                
+#Same as basic function
+def advancedplot():
+    plt.xlabel("Time/days")
+    plt.ylabel("Number (1000s)")
+    plt.grid()
+    
+    Simu=Simulator.AdvancedSimulation()
+    listofoptions = ["Suseptible", "Exposed", "Asymptomatic", "Symptomatic", "Self-Isolating", "Hospitalised", "Dead", "Recovered"]
+    choice = easygui.multchoicebox(question, title, listofoptions)
+    for i in choice:
+        if i == "Suseptible":
+            plt.plot(Simu.t, Simu.S, label="Suseptible")
+        if i == "Exposed":
+            plt.plot(Simu.t, Simu.E, label="Exposed")
+        if i == "Asymptomatic":
+            plt.plot(Simu.t, Simu.Asymp, label="Asymptomatic")
+        if i == "Symptomatic":
+            plt.plot(Simu.t, Simu.Symp, label="Symptomatic")
+        if i == "Self-Isolating":
+            plt.plot(Simu.t, Simu.Iso, label="Self-Isolating")
+        if i == "Hospitalised":
+            plt.plot(Simu.t, Simu.Hos, label="Hospitalised")
+        if i == "Dead":
+            plt.plot(Simu.t, Simu.D, label="Dead")
+        if i == "Recovered":
+            plt.plot(Simu.t, Simu.R, label="Recovered")
+            
+    plt.legend()
+    
