@@ -23,11 +23,11 @@ def basicplot():
     Sim=Simulator.BasicSimulation()
     question = "Please select desired plots for graph."#Formatting the GUI checklist
     title = "Options for Plotting"
-    listofoptions = ["Suseptible", "Infected", "Recovered"]#Options for GUI checklist
+    listofoptions = ["Susceptible", "Infected", "Recovered"]#Options for GUI checklist
     choice = easygui.multchoicebox(question, title, listofoptions)#Launches GUI with options
     for i in choice:#Plots the chosen options on graph
-        if i == "Suseptible":
-            plt.plot(Sim.t, Sim.S, label="Suseptible")
+        if i == "Susceptible":
+            plt.plot(Sim.t, Sim.S, label="Susceptible")
         if i == "Infected":
             plt.plot(Sim.t, Sim.I, label="Infected")
         if i == "Recovered":
@@ -45,11 +45,11 @@ def advancedplot():
     Simu=Simulator.AdvancedSimulation()
     question = "Please select desired plots for graph."#Formatting the GUI checklist
     title = "Options for Plotting"
-    listofoptions = ["Suseptible", "Exposed", "Asymptomatic", "Symptomatic", "Self-Isolating", "Hospitalised", "Dead", "Recovered"]
+    listofoptions = ["Susceptible", "Exposed", "Asymptomatic", "Symptomatic", "Self-Isolating", "Hospitalised", "Dead", "Recovered"]
     choice = easygui.multchoicebox(question, title, listofoptions)
     for i in choice:
-        if i == "Suseptible":
-            plt.plot(Simu.t, Simu.S, label="Suseptible")
+        if i == "Susceptible":
+            plt.plot(Simu.t, Simu.S, label="Susceptible")
         if i == "Exposed":
             plt.plot(Simu.t, Simu.E, label="Exposed")
         if i == "Asymptomatic":
