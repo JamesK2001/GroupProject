@@ -45,10 +45,16 @@ def main(*args):
         basicsim = Simulator.BasicSimulation(userinput.basicinputarray)
             
         PEF.basicplot(basicsim)
+        
+        PEF.plt.show()
             
     
     elif userinput.version == "Advanced":
-        advancedsim = Simulator.AdvancedSimulation(userinput.advancedarray)
+        advancedsim = Simulator.AdvancedSimulation(userinput.advancedinputarray)
+        
+        PEF.advancedplot(advancedsim)
+        
+        PEF.plt.show()
         
         
     
