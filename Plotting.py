@@ -14,9 +14,6 @@ import easygui
 Sim=Simulator.BasicSimulation(1, 2, 2, 600, 7, 0.2, 100)
 Simu=Simulator.AdvancedSimulation(948, 10, 10, 10, 15, 5, 1, 1, 1000, 5, 7, 2, 1, 0.2, 0.3, 0.3, 0.1, 0.1, 0.08, 0.1, 0.05, 100)
 
-question = "Please select desired plots for graph."#Formatting the GUI checklist
-title = "Options for Plotting"
-
     
 def basicplot():
     plt.xlabel("Time/days")#Creating the graph
@@ -24,6 +21,8 @@ def basicplot():
     plt.grid()
     
     Sim=Simulator.BasicSimulation()
+    question = "Please select desired plots for graph."#Formatting the GUI checklist
+    title = "Options for Plotting"
     listofoptions = ["Suseptible", "Infected", "Recovered"]#Options for GUI checklist
     choice = easygui.multchoicebox(question, title, listofoptions)#Launches GUI with options
     for i in choice:#Plots the chosen options on graph
@@ -44,6 +43,8 @@ def advancedplot():
     plt.grid()
     
     Simu=Simulator.AdvancedSimulation()
+    question = "Please select desired plots for graph."#Formatting the GUI checklist
+    title = "Options for Plotting"
     listofoptions = ["Suseptible", "Exposed", "Asymptomatic", "Symptomatic", "Self-Isolating", "Hospitalised", "Dead", "Recovered"]
     choice = easygui.multchoicebox(question, title, listofoptions)
     for i in choice:
