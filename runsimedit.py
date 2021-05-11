@@ -13,6 +13,7 @@ initial state values and transition constants
 import argparse
 import FinalSimulator as Simulator
 import inputhandler 
+import PlottingEditFunc as PEF
 
 def main(*args):
     """
@@ -43,6 +44,7 @@ def main(*args):
         
         basicsim = Simulator.BasicSimulation(userinput.basicinputarray)
             
+        PEF.basicplot(basicsim)
             
     
     elif userinput.version == "Advanced":
