@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import Simulator 
 import easygui
-Simu = Simulator.Simulation(948, 10, 10, 10, 15, 5, 1, 1, 1000, 5, 7, 2, 1, 0.2, 0.3, 0.3, 0.1, 0.1, 0.08, 0.1, 0.05, 100)
+Simu = Simulator.Simulation()
 
 #Setting up the graph
 plt.xlabel("Time/days")
