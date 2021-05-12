@@ -1,4 +1,4 @@
-# GroupProject
+# Advanced SIR Epidemic Modelling Program
 
 
 This Repository can be used to simulate an epidemic using a system of ODEs which define the time rate
