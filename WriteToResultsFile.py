@@ -75,7 +75,7 @@ def ConstantstoFile(filename, inputarray):
         simulationResult_file.write("\nFraction of Hospitalised Population that Recover per Day: ")
         simulationResult_file.write(str(HosR))
         simulationResult_file.write("\nNumber of Days for Model: ")
-        simulationResult_file.write(duration)
+        simulationResult_file.write(str(duration))
         simulationResult_file.close()
 # Basic Version        
     if len(inputarray) < 8:
@@ -95,6 +95,6 @@ def ConstantstoFile(filename, inputarray):
         simulationResult_file.write("\nRecovery Rate for Infected Population per day: ")
         simulationResult_file.write(str(gamma))
         simulationResult_file.write("\nNumber of Days for Model: ")
-        simulationResult_file.write(duration)
+        simulationResult_file.write(str(duration))
         simulationResult_file.close()
         

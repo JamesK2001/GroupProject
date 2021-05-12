@@ -32,13 +32,14 @@ class InputHandler:
     def handleversion(self):
         while True:
             try:
-                x = (self.versioninput == ("Basic" or "Advanced"))
-                if (x == True):
+                "Basic" or "Advanced" == self.versioninput
+                if True:
                     self.version = self.versioninput
                     return self.version
                 else:
                     print("Invalid Command Line Argument for Version")
-                    break
+                    return 
+                
             except Exception as e:
                 print("Invalid input:", e)
                 

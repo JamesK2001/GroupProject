@@ -77,17 +77,17 @@ def main(*args):
     userversion = args.version
     
     userinput = inputhandler.InputHandler(userversion)
-    
+   
 
 
 # Setting up simulation depending on Version selected 
 
  ## Basic Version Path  
     if userinput.version == "Basic":
-        
         basicsim = Simulator.BasicSimulation(userinput.basicinputarray)
             
         if args.graph:
+
             fig = FPF.basicplot(basicsim)
             if args.graphfile is None:
                 fig.show()
@@ -107,6 +107,7 @@ def main(*args):
 ## Advanced Version Path
     
     if userinput.version == "Advanced":
+
         advancedsim = Simulator.AdvancedSimulation(userinput.advancedinputarray)
         
         if args.graph:
@@ -121,7 +122,11 @@ def main(*args):
             
         
       
-
+    else:
+        print("Simulation Complete")
+        
+        exit()
+        
 
         
     
