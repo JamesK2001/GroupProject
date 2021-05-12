@@ -3,16 +3,23 @@
 
 This Repository can be used to simulate an epidemic using a system of ODEs which define the time rate
 of change in the number of people in a given "state" (with respect to the epidemic).
+
 This Repo allows two versions of a simulation to be used. 1st is a Basic simulator with 3 epidemic states
 The 2nd is an advanced simulator with 8 Virus states.
+
 They are both built upon the same principals of SIR modelling. 
+
+
 User can select to use default parameters to define the simulation
+
 or 
+
 User can input all of the parameters themselves which are held to relevant conditions
 
 The program can be used to also plot the results of the simulations on a graph and save the graph to a .png file.
 
 The plots you want to see on the graph can be selected via a GUI ( please install easygui)
+
 The parameters used to define the simulation can be saved to a .txt file 
 
 
@@ -20,6 +27,7 @@ The parameters used to define the simulation can be saved to a .txt file
 
 The program is operated via the runsim.py file using command line arguments which are explained 
 and defined in the runsim.py file.
+
 In order to use the program please install easygui 
 
 
@@ -32,9 +40,12 @@ In order to use the program please install easygui
 
 This Version Includes:
 
------Basic SIR (Susceptible, Infected, Recovered)-----
+-----Basic SIR -----
+
+(Susceptible, Infected, Recovered)
 
 ----States----
+
 #Susceptible#
 
 S
@@ -51,8 +62,10 @@ R
 ------- Constants/Coefficients ---------
 
 Format:
+	
 	Description of Constants
-     = variable name for use in functions
+    
+    = variable name for use in functions
     
 -------------------------------------------------------------
 
@@ -68,7 +81,9 @@ Format:
 
 
 ----- Advanced SIR -----
+
 Susceptible, Exposed , Infected States - (Asymptomatic, Symptomatic, SelfIsolated, Hospitalised) 
+
 Recovered Alive, Dead
 
 
