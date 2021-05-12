@@ -1,31 +1,75 @@
 # GroupProject
-Simulation of an epidemic using connected rates of change and ODEs.
-A development on the SIR model to introduce more "states" that a populant
-can be assigned wrt the virus.
+
+
+This Repository can be used to simulate an epidemic using a system of ODEs which define the time rate
+of change in the number of people in a given "state" (with respect to the epidemic).
+This Repo allows two versions of a simulation to be used. 1st is a Basic simulator with 3 epidemic states
+The 2nd is an advanced simulator with 8 Virus states.
+They are both built upon the same principals of SIR modelling. 
+User can select to use default parameters to define the simulation
+or 
+User can input all of the parameters themselves which are held to relevant conditions
+
+The program can be used to also plot the results of the simulations on a graph and save the graph to a .png file.
+
+The plots you want to see on the graph can be selected via a GUI ( please install easygui)
+The parameters used to define the simulation can be saved to a .txt file 
+
+
+-- USAGE--
+
+The program is operated via the runsim.py file using command line arguments which are explained 
+and defined in the runsim.py file.
+In order to use the program please install easygui 
+
+
+
+
+
+
+
+
 
 This Version Includes:
 
-Susceptible , Exposed , Infected States - (Asymptomatic, Symptomatic, Self
-Isolated, Hospitalised) , Recovered Alive, Dead
+-----Basic SIR (Susceptible, Infected, Recovered)-----
 
-Calculating the connected rates of change using a transition flow diagram
-(In Research Documents) and associated constants / coefficients which
-define the rate at which these transitions occur. An array of these coefficients
-associated with the National (UK) and Local (Bristol) COVID-19 outbreak
-will be available for users to input into the simulation program.
+----States----
+#Susceptible#
 
-The DEs are integrated over the 'duration' of the simulation and
+S
 
-currently :
+#Infected#
 
-plotted with a minimum 1 day time step intervals and solved using initial conditions provided
-by default or provided by the user.
+I
 
-should:
+#Recovered Alive #
 
-export the array of data to be used by other functions
-These initial conditions take the form State0 Where State is replaced with
-the corresponding shorthand State ID as shown below
+R
+
+
+------- Constants/Coefficients ---------
+
+Format:
+	Description of Constants
+     = variable name for use in functions
+    
+-------------------------------------------------------------
+
+• Number of Contacts by an infected person per day which are Sufficient to spread the disease:
+
+	 = beta
+	 
+• Recovery rate of Infected People. (I.e 1/number of days it takes to become noninfectious) :
+  	
+	= gamma
+	
+
+
+
+----- Advanced SIR -----
+Susceptible, Exposed , Infected States - (Asymptomatic, Symptomatic, SelfIsolated, Hospitalised) 
+Recovered Alive, Dead
 
 
 ----States----
