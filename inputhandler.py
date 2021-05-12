@@ -26,8 +26,8 @@ class InputHandler:
         self.helpmessage = "Invalid --version Input: --version='Basic' or --version='Advanced' depending on simulation version you would like to use"
         self.basicinputarray = []
         self.advancedinputarray = []
-        self.handleversion()
-        self.run()
+#        self.handleversion()
+#        self.requestinputs()
         
     def handleversion(self):
         while True:
@@ -43,7 +43,7 @@ class InputHandler:
             except Exception as e:
                 print("Invalid input:", e)
                 
-    def run(self):
+    def requestinputs(self):
         if self.version == "Basic":
             self.handlebasicinput()
                 
@@ -87,7 +87,7 @@ class InputHandler:
                 print("Error:", e)
         while True:
             try:
-                beta = float(input("Number of Contacts by an infected person per day which are Sufficient to spread the disease :"))
+                beta = float(input("Number of Contacts by an infected person per day which are Sufficient to spread the disease:"))
                 if (beta >= 0):
                     break
                 else:
@@ -97,7 +97,8 @@ class InputHandler:
         
         while True:
             try:
-                gamma = float(input("Recovery rate of Infected People. (I.e 1/number of days it takes to become noninfectious) Equivalent to the fraction of the infected population that recover per day:"))
+                gamma = float(input("Recovery rate of Infected People. (I.e 1/number of days it takes to become noninfectious) Equivalent to the fraction of the infected population that recover per day \
+                                    :"))
                             
                 if (gamma >= 0 and gamma <= 1):
                     break
@@ -108,7 +109,7 @@ class InputHandler:
                 
         while True:
             try:
-                duration = int(input("Number of days to run the simulation for"))
+                duration = int(input("Number of days to run the simulation for:"))
                 if (duration >= 0):
                     break
                 else:
@@ -155,7 +156,7 @@ class InputHandler:
                 print("Error:", e)
         while True:
             try:
-                Iso0 = int(input("Initial Number of Self Isolated People ( Chceck ReadMe for info on how this state is define)"))
+                Iso0 = int(input("Initial Number of Self Isolated People ( Chceck ReadMe for info on how this state is defined): "))
                 if (Iso0 >= 0):
                     break
                 else:
@@ -201,7 +202,7 @@ class InputHandler:
        
         while True:
             try:
-                a = float(input("Number of Contacts sufficient to Spread virus by Asymptomatic Infected Person Per Day"))
+                a = float(input("Number of Contacts sufficient to Spread virus by Asymptomatic Infected Person Per Day: "))
                 if (a >= 0):
                     break
                 else:
@@ -210,7 +211,7 @@ class InputHandler:
                 print("Error:", e)
         while True:
             try:
-                b = float(input("Number of Contacts sufficient to Spread virus by Symptomatic Infected Person Per Day"))
+                b = float(input("Number of Contacts sufficient to Spread virus by Symptomatic Infected Person Per Day: "))
                 if (b >= 0):
                     break
                 else:
@@ -219,7 +220,7 @@ class InputHandler:
                 print("Error:", e)
         while True:
             try:
-                c = float(input("Number of Contacts sufficient to Spread virus by Self-Isolated Infected Person Per Day"))
+                c = float(input("Number of Contacts sufficient to Spread virus by Self-Isolated Infected Person Per Day: "))
                 if (c >= 0):
                     break
                 else:
@@ -229,7 +230,7 @@ class InputHandler:
                 
         while True:
             try:
-                f = float(input("Number of Contacts sufficient to Spread virus by Hospitalised Infected Person Per Day"))
+                f = float(input("Number of Contacts sufficient to Spread virus by Hospitalised Infected Person Per Day: "))
                 if (f >= 0):
                     break
                 else:
@@ -240,7 +241,7 @@ class InputHandler:
         print( " -- USAGE MESSAGE --- " + "\n" + " The Next Input Relates to the total fraction of the Exposed Population that become infected per day (= k ) . The Input after this relates to the Fraction of the Exposed Population that become Asymptomatic Infected ( = g) . The fraction of the Exposed Population that become Symptomatic Infected per day ( = j )  will be calculated by subtracting 'g' from 'k' . i.e. j = k - g  Therefore g must be less than k and k must be less than or equal to 1 ")
         while True:
             try:
-                k = float(input("Fraction of Total Exposed Population that Become Infected Per Day . Equivalent to 1/(Incubation Periods in Days) "))
+                k = float(input("Fraction of Total Exposed Population that Become Infected Per Day . Equivalent to 1/(Incubation Periods in Days) : "))
                 if (k >= 0 and k <= 1.0 ):
                     break
                 else:
@@ -249,7 +250,7 @@ class InputHandler:
                 print("Error:", e)
         while True:
             try:
-                g = float(input("Fraction of Exposed Population that become Asymptomatic Infected Per Day"))
+                g = float(input("Fraction of Exposed Population that become Asymptomatic Infected Per Day: "))
                 if (g >= 0 and g <= k):
                     break
                 else:
@@ -264,7 +265,7 @@ class InputHandler:
         
         while True:
             try:
-                L = float(input("Fraction of Symptomatic Population that becomes Self-Isolated Per Day Equivalent to 1/(Typical Number of Days between Symptom onset and self isolation)"))
+                L = float(input("Fraction of Symptomatic Population that becomes Self-Isolated Per Day Equivalent to 1/(Typical Number of Days between Symptom onset and self isolation) : "))
                                 
                 if (L >= 0 and L <= 1):
                     break
@@ -275,7 +276,7 @@ class InputHandler:
                 
         while True:
             try:
-                m = float(input("Fraction of Self-Isolated Population that become Hospitalised Per Day. Equivalent to the probability of a Self-isolated infected person being admitted to hospital on a given day"))
+                m = float(input("Fraction of Self-Isolated Population that become Hospitalised Per Day. Equivalent to the probability of a Self-isolated infected person being admitted to hospital on a given day : "))
                                     
                 if (m >= 0 and m <= 1):
                     break
@@ -286,7 +287,7 @@ class InputHandler:
                 
         while True:
             try:
-                p = float(input("Fraction of The Hospitalised Population that Die per day Equivalent to the probabilitity of a hospitalised person dieing on a given day"))
+                p = float(input("Fraction of The Hospitalised Population that Die per day Equivalent to the probabilitity of a hospitalised person dieing on a given day: "))
                 if (p >= 0 and p <= 1):
                     break
                 else:
@@ -314,7 +315,7 @@ class InputHandler:
                 
         while True:
             try:
-                v = float(input("Fraction of the Hospitalised Population that Recover Per Day. Equivalent to 1/(Typical Number of Days In Hospital until Recovery)"))
+                v = float(input("Fraction of the Hospitalised Population that Recover Per Day. Equivalent to 1/(Typical Number of Days In Hospital until Recovery): "))
                 if (v >= 0 and v <= (1 - p)):
                     break
                 else:
@@ -324,7 +325,7 @@ class InputHandler:
                 print("Error:", e)
         while True:
           try:
-              duration = int(input("Number of days to run the simulation for"))
+              duration = int(input("Number of days to run the simulation for: "))
               if (duration >= 0):
                   break
               else:
