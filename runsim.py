@@ -135,7 +135,7 @@ def main(*args):
         # Passing to InputHandler to Request Inputs for parameters
         
         specificuserinputs = inputhandler.InputHandler(userversion)
-        specificuserinputs.requestinputs(specificuserinputs.version)
+        specificuserinputs.requestinputs()
    
 
 
