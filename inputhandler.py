@@ -26,7 +26,7 @@ class InputHandler:
         self.helpmessage = "Invalid --version Input: --version='Basic' or --version='Advanced' depending on simulation version you would like to use"
         self.basicinputarray = []
         self.advancedinputarray = []
-#        self.handleversion()
+        self.handleversion()
 #        self.requestinputs()
         
     def handleversion(self):

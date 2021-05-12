@@ -80,7 +80,7 @@ def main(*args):
     
     userversion = args.version
     userinput = inputhandler.InputHandler(userversion)
-    userinput.handleversion()
+    
     
     #Default Parameters Path
     if args.default:
@@ -133,8 +133,9 @@ def main(*args):
     else:
     
         # Passing to InputHandler to Request Inputs for parameters
-
-        specificuserinputs = inputhandler.InputHandler.requestinputs(userinput.version)
+        
+        specificuserinputs = inputhandler.InputHandler(userversion)
+        specificuserinputs.requestinputs(specificuserinputs.version)
    
 
 
