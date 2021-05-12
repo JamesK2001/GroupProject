@@ -29,7 +29,7 @@ title = "Options for Plotting"
     
 def basicplot(Simu):
     plt.xlabel("Time/days")#Creating the graph
-    plt.ylabel("Number (1000s)")
+    plt.ylabel("Number of People")
     plt.grid()
     
 
@@ -49,7 +49,7 @@ def basicplot(Simu):
 #Same as basic function but includes the additional states for the advanced simulation
 def advancedplot(Simu):
     plt.xlabel("Time/days")
-    plt.ylabel("Number (1000s)")
+    plt.ylabel("Number of People")
     plt.grid()
     
     
