@@ -47,6 +47,7 @@ import FinalSimulator as Simulator
 import inputhandler 
 import FinalPlottingFunc as FPF
 import WriteToResultsFile as WTRF
+import matplotlib.pyplot as plt
 
 
 def main(*args):
@@ -90,10 +91,10 @@ def main(*args):
 
             fig = FPF.basicplot(basicsim)
             if args.graphfile is None:
-                fig.show()
+                plt.show()
             else:
-                fig.show()
-                fig.savefig(args.graphfile)
+                plt.show()
+                plt.savefig(args.graphfile)
         if args.constants:
             WTRF.ConstantstoFile(args.constantsfile, userinput.basicinputarray)
             
@@ -113,10 +114,10 @@ def main(*args):
         if args.graph:
             fig = FPF.advancedplot(advancedsim)
             if args.graphfile is None:
-                fig.show()
+                plt.show()
             else:
-                fig.show()
-                fig.savefig(args.graphfile)
+                plt.show()
+                plt.savefig(args.graphfile)
         if args.constants:
             WTRF.ConstantstoFile(args.constantsfile, userinput.advancedinputarray)
             

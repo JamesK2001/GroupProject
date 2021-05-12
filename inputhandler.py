@@ -32,7 +32,7 @@ class InputHandler:
     def handleversion(self):
         while True:
             try:
-                "Basic" or "Advanced" == self.versioninput
+                "Basic" == self.versioninput or "Advanced" == self.versioninput
                 if True:
                     self.version = self.versioninput
                     return self.version
