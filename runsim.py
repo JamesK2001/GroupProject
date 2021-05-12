@@ -45,7 +45,7 @@ The script can be used to:
 import argparse
 import FinalSimulator as Simulator
 import inputhandler 
-import PlottingEditFunc as PEF
+import FinalPlottingFunc as FPF
 import WriteToResultsFile as WTRF
 
 
@@ -88,7 +88,7 @@ def main(*args):
         basicsim = Simulator.BasicSimulation(userinput.basicinputarray)
             
         if args.graph:
-            fig = PEF.basicplot(basicsim)
+            fig = FPF.basicplot(basicsim)
             if args.graphfile is None:
                 fig.show()
             else:
@@ -110,7 +110,7 @@ def main(*args):
         advancedsim = Simulator.AdvancedSimulation(userinput.advancedinputarray)
         
         if args.graph:
-            fig = PEF.advancedplot(advancedsim)
+            fig = FPF.advancedplot(advancedsim)
             if args.graphfile is None:
                 fig.show()
             else:
