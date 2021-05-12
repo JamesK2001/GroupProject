@@ -5,6 +5,18 @@ Created on Tue May  4 19:55:13 2021
 @author: kerrj
 """
 
+'''
+Plotting Functions
+Inputs:
+    Simulation Class --> Takes the result arrays of the specified states 
+    from the attributes of the simulation class.
+    Also takes the line space relating to the time duration of the simulation
+    
+Returns:
+    MatPlot graph of simulation with user selected subplots
+    to be used in show and/or save to file in runsim.py
+    
+'''
 
 import matplotlib.pyplot as plt
 
@@ -34,7 +46,7 @@ def basicplot(Simu):
     plt.legend()#Adds a key to the graph
                 
                 
-#Same as basic function
+#Same as basic function but includes the additional states for the advanced simulation
 def advancedplot(Simu):
     plt.xlabel("Time/days")
     plt.ylabel("Number (1000s)")

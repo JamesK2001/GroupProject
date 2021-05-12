@@ -5,6 +5,25 @@ Created on Fri May  7 14:05:38 2021
 
 @author: conradodriscoll
 """
+'''
+class Systems for both Basic and Advanced Simulation.
+Inputs:
+    User input arrays from the inputhandler.py module
+    
+    Processes:
+        Defines the system of differential Equations in relation
+        to the provided parameters.
+        integrates the DEs over the timespace given by the duration in 1 day 
+        time step intervals.
+
+Returns:
+    1D Arrays for each state equation containing the values of the state
+    at each time interval point. The resultant arrays are assigned as class
+    attributes.
+'''
+
+
+
 import numpy as np
 from scipy.integrate import odeint
 
@@ -104,7 +123,7 @@ class AdvancedSimulation:
         
         ''' Derivative equation function. Defines the ODEs which determine the
         time rate of change in the number of people in each state. Uses the constants defined
-        when calling the class.
+        by the user.
         '''
         S, E, Asymp, Symp, Iso, Hos, D, R = y
         dSdt = -((S / (self.N - D)) * ((self.a * Asymp) + (self.b * Symp) + (self.c * Iso) + (self.f * Hos)))

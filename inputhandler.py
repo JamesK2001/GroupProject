@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Input handler for use in the runsim program.
-Asks for inputs required for each version of the simulation whilst briefly 
-explaining what each one represents. Handles incorrect inputs and re requests
-entry of input whilst providing an extended help document.
-
+Class definiton of the input handling module.
+Inputs:
+    Simulation Version
+Process:
+    Requests the necessary input parameters for the simulation version
+    from the user whilst giving a brief description of each.
+    Holds necessary conditions for these parameters when necessary
+Returns:
+    A 1D array of the input parameters to be used in simulation module
+    and SaveInputsToFile module via the runsim.py program.
+    
 Created on Mon May 10 17:51:55 2021
 
 @author: conradodriscoll
@@ -17,8 +23,7 @@ class InputHandler:
     def __init__(self, versioninput):
         self.versioninput = versioninput
         self.version = None
-        self.helpmessage = "Enter either Basic or Advanced depending on simulation\
-            version you would like to use"
+        self.helpmessage = "Invalid --version Input: --version='Basic' or --version='Advanced' depending on simulation version you would like to use"
         self.basicinputarray = []
         self.advancedinputarray = []
         self.handleversion()
@@ -27,11 +32,13 @@ class InputHandler:
     def handleversion(self):
         while True:
             try:
-                self.version = self.versioninput
-                if (self.version == "Basic" or "Advanced"):
-                    break
+                x = (self.versioninput == ("Basic" or "Advanced"))
+                if (x == True):
+                    self.version = self.versioninput
+                    return self.version
                 else:
                     print("Invalid Command Line Argument for Version")
+                    break
             except Exception as e:
                 print("Invalid input:", e)
                 
@@ -41,8 +48,10 @@ class InputHandler:
                 
         elif self.version == "Advanced":
             self.handleadvancedinput()
+        
         else:
             print(self.helpmessage)
+      
     
     def handlebasicinput(self):
         
