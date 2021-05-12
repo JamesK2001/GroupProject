@@ -32,15 +32,23 @@ The script can be used to:
     easy gui installed ( Does not work on Apple/Mac OSX ): Input instructions?
     
     Usage:
+    
         $ python runsim.py --version=('Basic' or 'Advanced') --default --graph --graphfile --constants --constantsfile
+        
         --version : Select 'Basic' or 'Advanced' 
-        (Inputs other than this will return error message and end the program. No input = default = 'Basic'
-         --default : to use the default input parameters to setup your simulation include --default in command line argument
+        (Inputs other than this will return error message and end the program. No input = default = 'Basic')
+        
+        --default : to use the default input parameters to setup your simulation include --default in command line argument
+        
         --graph : to produce plots include --graph in command line argument
+        
         --graphfile : filename to save an image of the graph to
+        
         --constants : to save a txt file of the inputs for the simulation include --constants in command line argument
+        
         --constantsfile : if --constants , you must input the desired filename as --constantsfile='filename.txt'
-    All Saved Files can be found in the directory in which the program resides in
+   
+   All Saved Files can be found in the directory in which the program resides in
     
 """
 
